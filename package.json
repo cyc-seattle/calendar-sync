@@ -1,0 +1,39 @@
+{
+  "name": "@cyc-seattle/calendar-sync",
+  "description": "Syncs events between Google Spreadsheet and Google Calendar",
+  "version": "0.0.1",
+  "author": "CYC Community Sailing Center",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "calendar-sync": "./src/main.ts"
+  },
+  "engines": {
+    "node": ">= 20.8 < 23"
+  },
+  "scripts": {
+    "prepare": "pnpm run build",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^13.1.0",
+    "@cyc-seattle/commodore": "workspace:^",
+    "@cyc-seattle/gsuite": "workspace:^",
+    "commander": "^13.1.0",
+    "exponential-backoff": "^3.1.2",
+    "google-spreadsheet": "^4.1.4",
+    "googleapis": "^144.0.0",
+    "luxon": "^3.5.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.4.2"
+  }
+}
