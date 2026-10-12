@@ -45,6 +45,6 @@
     "type": "git",
     "url": "git+https://github.com/cyc-seattle/calendar-sync.git"
   },
-  "packageManager": "pnpm@10.34.6",
+  "packageManager": "pnpm@10.34.7",
   "prettier": "@cyc-seattle/ts-config/prettier"
 }
