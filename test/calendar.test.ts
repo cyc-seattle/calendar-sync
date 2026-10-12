@@ -53,12 +53,12 @@ describe("CalendarSync.sync", () => {
     });
 
     const newId = "freshly-minted-id";
-    const createEvent = vi.fn().mockImplementation(
-      async (_calId: string, event: Omit<CalendarEvent, "id">): Promise<CalendarEvent> => ({
+    const createEvent = vi
+      .fn()
+      .mockImplementation(async (_calId: string, event: Omit<CalendarEvent, "id">): Promise<CalendarEvent> => ({
         ...event,
         id: newId,
-      }),
-    );
+      }));
     const updateEvent = vi.fn();
     // getEvent returns null: the stored ID is not present in the calendar.
     const getEvent = vi.fn().mockResolvedValue(null);
