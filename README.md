@@ -14,13 +14,16 @@ Syncs events from Google Spreadsheet to multiple Google Calendars.
 
 ## Installation
 
+This repo uses [mise](https://mise.jdx.dev) for its tools.
+
 ```bash
-pnpm add @cyc-seattle/calendar-sync
+mise trust
+mise run install
 ```
 
 ## Authentication
 
-This package uses Google Application Default Credentials (ADC). Before using, authenticate with:
+The tool uses Google Application Default Credentials (ADC). Authenticate as your own account:
 
 ```bash
 gcloud auth application-default login
@@ -31,7 +34,7 @@ gcloud auth application-default login
 ### Basic Sync
 
 ```bash
-calendar-sync \
+pnpm exec tsx src/main.ts \
   --spreadsheet-id "1abc..." \
   --events-worksheet "Events" \
   --calendars-worksheet "Calendars"
@@ -41,10 +44,10 @@ calendar-sync \
 
 ```bash
 # Info level
-calendar-sync --spreadsheet-id "1abc..." -v
+pnpm exec tsx src/main.ts --spreadsheet-id "1abc..." -v
 
 # Debug level
-calendar-sync --spreadsheet-id "1abc..." -vv
+pnpm exec tsx src/main.ts --spreadsheet-id "1abc..." -vv
 ```
 
 ### Options
@@ -59,7 +62,7 @@ calendar-sync --spreadsheet-id "1abc..." -vv
 
 ```typescript
 import { google } from "googleapis";
-import { CalendarSyncClient } from "@cyc-seattle/calendar-sync";
+import { CalendarSyncClient } from "./src/index.js";
 
 // Initialize Google Auth
 const auth = new google.auth.GoogleAuth({
@@ -142,11 +145,8 @@ This package uses the `@cyc-seattle/gsuite-sdk` package which automatically thro
 ## Development
 
 ```bash
-# Build the package
-pnpm run build
-
-# Clean build artifacts
-pnpm run clean
+mise run ci     # typecheck, format check, lint, and tests
+mise run build  # compile into dist/
 ```
 
 ## License
