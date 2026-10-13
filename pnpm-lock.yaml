@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@commander-js/extra-typings':
-        specifier: ^13.1.0
-        version: 13.1.0(commander@13.1.0)
+        specifier: ^15.0.0
+        version: 15.0.0(commander@15.0.0)
       '@cyc-seattle/commodore':
         specifier: ^0.1.0
         version: 0.1.2
@@ -18,8 +18,8 @@ importers:
         specifier: ^0.1.0
         version: 0.1.1(google-auth-library@9.15.1)
       commander:
-        specifier: ^13.1.0
-        version: 13.1.0
+        specifier: ^15.0.0
+        version: 15.0.0
       exponential-backoff:
         specifier: ^3.1.3
         version: 3.1.3
@@ -75,6 +75,11 @@ packages:
     resolution: {integrity: sha512-q5P52BYb1hwVWE6dtID7VvuJWrlfbCv4klj7BjUUOqMz4jbSZD4C9fJ9lRjL2jnBGTg+gDDlaXN51rkWcLk4fg==}
     peerDependencies:
       commander: ~13.1.0
+
+  '@commander-js/extra-typings@15.0.0':
+    resolution: {integrity: sha512-yeJlba62xqmkgELUsn7356MEnzLLu/fw2x4lofFqGnXh6YysRdEs2BaLeLtg1+KU0AXvMeqQvTTp+3hBEBK+EA==}
+    peerDependencies:
+      commander: ~15.0.0
 
   '@cyc-seattle/commodore@0.1.2':
     resolution: {integrity: sha512-o0lB9gCNh4pMgN3BOPsSw/IavULf5chaMS9ri439VucyrjyLc8KDeDxWLaftHmlIWZp5EyPJLMwjjLQCP7wRDA==}
@@ -655,6 +660,10 @@ packages:
   commander@13.1.0:
     resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
+
+  commander@15.0.0:
+    resolution: {integrity: sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg==}
+    engines: {node: '>=22.12.0'}
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -1478,6 +1487,10 @@ snapshots:
     dependencies:
       commander: 13.1.0
 
+  '@commander-js/extra-typings@15.0.0(commander@15.0.0)':
+    dependencies:
+      commander: 15.0.0
+
   '@cyc-seattle/commodore@0.1.2':
     dependencies:
       '@commander-js/extra-typings': 13.1.0(commander@13.1.0)
@@ -1983,6 +1996,8 @@ snapshots:
       delayed-stream: 1.0.0
 
   commander@13.1.0: {}
+
+  commander@15.0.0: {}
 
   concat-map@0.0.1: {}
 
